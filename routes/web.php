@@ -35,8 +35,8 @@ use Illuminate\Support\Facades\Route;
 //    echo ("Ini adalah Halaman Artikel dengan ID ".$id);
 //});
 
-Route::get('/','App\Http\Controllers\PageController@index');
+Route::get('/','App\Http\Controllers\HomeController@index');
 
-Route::get('/about','App\Http\Controllers\PageController@about');
+Route::get('/about','App\Http\Controllers\AboutController@about');
 
-Route::get('/articles/{id}','App\Http\Controllers\PageController@articles');
+Route::get('/articles/{id}','App\Http\Controllers\ArticleController@articles');
