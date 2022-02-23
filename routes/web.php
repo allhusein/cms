@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HalamanHome;
+use App\Http\Controllers\HalamanNews;
+use App\Http\Controllers\HalamanProducts;
+use App\Http\Controllers\HalamanProgram;
+use App\Http\Controllers\HalamanAboutUs;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +40,26 @@ use Illuminate\Support\Facades\Route;
 //    echo ("Ini adalah Halaman Artikel dengan ID ".$id);
 //});
 
+/*
 Route::get('/','App\Http\Controllers\HomeController@index');
 
 Route::get('/about','App\Http\Controllers\AboutController@about');
 
-Route::get('/articles/{id}','App\Http\Controllers\ArticleController@articles');
+Route::get('/articles/{id}','App\Http\Controllers\ArticleController@articles'); */
+
+
+Route::get('/', [HalamanHome::class,'index']);
+
+Route::prefix('Products')->group(function(){
+      Route::get('/edu','App\Http\Controllers\HalamanProducts@edu');
+      Route::get('/Friends-edu',[ProdiController::class , 'friends']);
+      Route::get('/Story-books',[ProdiController::class , 'books']);
+      Route::get('/Kids-song',[ProdiController::class , 'song']);
+});
+
+Route::prefix('news') -> group(function () {
+  Route::get("", function () {
+      echo " ini Page NEWS";
+  });
+  
+});
