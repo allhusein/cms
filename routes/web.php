@@ -48,18 +48,40 @@ Route::get('/about','App\Http\Controllers\AboutController@about');
 Route::get('/articles/{id}','App\Http\Controllers\ArticleController@articles'); */
 
 
-Route::get('/', [HalamanHome::class,'index']);
+// Route::get('/', [HalamanHome::class,'index']);
 
-Route::prefix('Products')->group(function(){
-      Route::get('/edu','App\Http\Controllers\HalamanProducts@edu');
-      Route::get('/Friends-edu',[ProdiController::class , 'friends']);
-      Route::get('/Story-books',[ProdiController::class , 'books']);
-      Route::get('/Kids-song',[ProdiController::class , 'song']);
+// Route::prefix('Products')->group(function(){
+//       Route::get('/edu','App\Http\Controllers\HalamanProducts@edu');
+//       Route::get('/Friends-edu',[ProdiController::class , 'friends']);
+//       Route::get('/Story-books',[ProdiController::class , 'books']);
+//       Route::get('/Kids-song',[ProdiController::class , 'song']);
+// });
+
+// Route::prefix('news') -> group(function () {
+//   Route::get("", function () {
+//       echo " ini Page NEWS";
+//   });
+  
+// });
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/', function(){
+  return view('home');
 });
 
-Route::prefix('news') -> group(function () {
-  Route::get("", function () {
-      echo " ini Page NEWS";
-  });
-  
+Route::get('/about',function(){
+  return view('about');
+});
+
+
+Route::get('/product',function(){
+  return view('product');
+});
+
+
+Route::get('/contact',function(){
+  return view('contact');
 });
