@@ -68,20 +68,22 @@ Route::get('/articles/{id}','App\Http\Controllers\ArticleController@articles'); 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/', function(){
-  return view('home');
-});
+// Route::get('/', function(){
+//   return view('home');
+// });
 
-Route::get('/about',function(){
-  return view('about');
-});
-
-
-Route::get('/product',function(){
-  return view('product');
-});
+// Route::get('/about',function(){
+//   return view('about');
+// });
 
 
-Route::get('/contact',function(){
-  return view('contact');
-});
+// Route::get('/product',function(){
+//   return view('product');
+// });
+
+
+// Route::get('/contact',function(){
+//   return view('contact');
+// });
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
