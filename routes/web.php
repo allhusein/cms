@@ -94,3 +94,5 @@ Route::get('/articles/{id}','App\Http\Controllers\ArticleController@articles'); 
 
 
 Route::resource('articles', ArticleController::class);
+
+Route::get('/article/cetak_pdf',[ArticleController::class,'cetak_pdf'])->name('cetak_pdf');
