@@ -6,7 +6,8 @@ use App\Http\Controllers\HalamanNews;
 use App\Http\Controllers\HalamanProducts;
 use App\Http\Controllers\HalamanProgram;
 use App\Http\Controllers\HalamanAboutUs;
-
+use App\Http\Controllers\ArticleController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -86,8 +87,10 @@ Route::get('/articles/{id}','App\Http\Controllers\ArticleController@articles'); 
 //   return view('contact');
 // });
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+ Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('articles', ArticleController::class);
